@@ -1,0 +1,8 @@
+.directory-menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr 1.1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 15px;
+  grid-template-areas: 'main main sub1 sub3' 'main main sub2 sub3' 'sub4 sub4 sub5 sub5';
+}

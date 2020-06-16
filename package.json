@@ -1,34 +1,32 @@
 {
-  "name": "gym-nerd",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+  "name": "gym-nerd-server",
+  "version": "1.0.0",
+  "engines": {
+    "node": "v12.16.1",
+    "npm": "v12.16.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "description": "",
+  "main": "server.js",
+  "author": "dev-seahouse",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "react-alert-template-basic": "^1.0.0",
+    "stripe": "^8.63.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^1.19.1"
   }
 }
