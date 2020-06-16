@@ -16,6 +16,7 @@ import ShopPage from './pages/shop/shop.component';
 import Orders from './pages/orders/orders.component';
 import Footer from './components/footer/footer.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import Drift from 'react-driftjs';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
